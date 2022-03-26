@@ -10,8 +10,8 @@ from selenium.webdriver.common.by import By
 
 class Locators():
     SERVICES_TAB = (By.XPATH,'/html/body/div/div/div[1]/a[3]')
-    OUR_SERVICES_TEXT = '//h1[text()="Our Services"]'
-    SQUISH_GUI_LOGO = '//a[@href="https://www.froglogic.com/squish/"]'
+    OUR_SERVICES_TEXT = '//h1[text()="Our Services"]'                                           #XPATH locator.
+    SQUISH_GUI_LOGO = '//a[@href="https://www.froglogic.com/squish/"]'                          #XPATH locator.
     AUTOMATED_GUI_TESTING = (By.XPATH,'//h4[text()="Automated GUI testing"]')
     EMBEDDED_TESTING = (By.XPATH,'//h4[text()="Embedded testing"]')
     MOBILE_APPLICATION_TESTING = (By.XPATH,'//h4[text()="Mobile application testing"]')
