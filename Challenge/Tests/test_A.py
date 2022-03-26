@@ -1,8 +1,6 @@
 import unittest
 from Challenge.Pages.BasePage import BasePage
-from Challenge.Pages.Google_HomePage import GoogleHomePage
-from Challenge.Pages.Google_SearchResultPage import GoogleResultPage
-from Challenge.Pages.Google_CookiesAgreementPage import GoogleAgreementPage
+from Challenge.Pages.GooglePages import *
 
 
 class GoogleSearchTest(unittest.TestCase, BasePage):
@@ -18,15 +16,15 @@ class GoogleSearchTest(unittest.TestCase, BasePage):
         driver.get("https://www.google.com/")
     
     #Agreeing on the agreement terms set by Google if the agreements page pops up.
-        cookiespage = GoogleAgreementPage(driver)
+        cookiespage = Google_CookiesAgreementPage.GoogleAgreementPage(driver)
         cookiespage.click_i_agree()
         
     #Home page search.
-        homepage = GoogleHomePage(driver)
+        homepage = Google_HomePage.GoogleHomePage(driver)
         homepage.search_for("CyberAlpaca")
 
     #Result page checking.
-        resultpage = GoogleResultPage(driver)
+        resultpage = Google_SearchResultPage.GoogleResultPage(driver)
         resultpage.Find_CA_Link()
         assert "www.cyberalpaca.com" in resultpage.Find_CA_Link() , "Result not found"
 

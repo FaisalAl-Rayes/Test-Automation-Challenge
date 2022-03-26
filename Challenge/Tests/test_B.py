@@ -1,7 +1,6 @@
 import unittest
 from Challenge.Pages.BasePage import BasePage
-from Challenge.Pages.CyberAlpaca_HomePage import CA_HomePage
-from Challenge.Pages.CyberAlpaca_ServicesPage import CA_ServicesPage
+from Challenge.Pages.CyberAlpacaPages import *
 
 
 class CyberAlpacaSurfTest(unittest.TestCase, BasePage):
@@ -18,11 +17,11 @@ class CyberAlpacaSurfTest(unittest.TestCase, BasePage):
         driver.get('http://www.cyberalpaca.com/')
 
     #Navigation through the Home Page.
-        homepage = CA_HomePage(driver)
+        homepage = CyberAlpaca_HomePage.CA_HomePage(driver)
         homepage.click_on_ServicesTab()
 
     #Entering the Services Page.
-        servicespage = CA_ServicesPage(driver)
+        servicespage = CyberAlpaca_ServicesPage.CA_ServicesPage(driver)
         servicespage.click_on_Automated_GUI_testing()
 
     #Making sure that Our Services Exists and that the Squish GUI Testing Logo is displayed in the Automated GUI Testing page.
