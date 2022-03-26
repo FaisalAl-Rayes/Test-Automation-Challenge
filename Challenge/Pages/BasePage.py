@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
@@ -32,15 +33,22 @@ class BasePage():
     def do_click(self, locator):
         WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(locator)).click()
 
-    def do_send_keys(self, locator,text):
+    def do_send_keys(self, locator, text):
         WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(locator)).send_keys(text)
 
     def do_find_element(self, locator):
-        
+        WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.XPATH, locator)))
         return self.driver.find_element(By.XPATH,locator)
 
+    def affirm_absence_of_element(self, locator):
+        try:
+            self.driver.find_element(By.XPATH, locator)
+        except NoSuchElementException:
+            x = "Element not present"
+        assert "not present" in x, "Element found!"
+
     def do_find_element_href(self, locator):
-        
+        WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.XPATH, locator)))
         return self.driver.find_element(By.XPATH,locator).get_attribute('href')
 
     def search_for(self, locator_SearchBar, locator_SearchButton, searchtext):

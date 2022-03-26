@@ -1,6 +1,5 @@
 from Challenge.Pages.BasePage import BasePage
 from Challenge.Locators.Locators_B import Locators
-from selenium.common.exceptions import NoSuchElementException
 
 
 class CA_ServicesPage(BasePage, Locators):
@@ -40,11 +39,6 @@ class CA_ServicesPage(BasePage, Locators):
         assert "www.froglogic.com/squish/" in self.do_find_element_href(Locators.SQUISH_GUI_LOGO)
 
     def check_for_missing_Squish_GUI_Testing_Logo(self):
-        try:
-            self.do_find_element(Locators.SQUISH_GUI_LOGO)
-        except NoSuchElementException:
-            x = "Squish GUI Testing Logo is not present in the API testing page"
-        assert "not present in the API testing" in x, "Squish GUI Testing Logo Found"
-
+        self.affirm_absence_of_element(Locators.SQUISH_GUI_LOGO)
 
     
