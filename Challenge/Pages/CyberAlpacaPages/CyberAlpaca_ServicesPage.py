@@ -32,6 +32,7 @@ class CA_ServicesPage(BasePage, Locators):
 
     #Checking methods.
     def check_for_Our_Services(self):
+        self.do_find_element(Locators.OUR_SERVICES_TEXT)
         assert "Our Services" in self.do_find_element(Locators.OUR_SERVICES_TEXT).text, "Not Found"
 
     def check_for_Squish_GUI_Testing_Logo(self):
