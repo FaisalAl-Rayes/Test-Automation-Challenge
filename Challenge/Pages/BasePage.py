@@ -18,8 +18,11 @@ class BasePage():
     def InitiateGoogleDriver(self):
         options = Options()
         options.add_argument("--disable-notifications")
+        options.add_argument("--disable-extensions")
+        options.add_argument("--start-maximized")
+        options.add_argument("--incognito")
+
         driver = webdriver.Chrome(options=options)
-        driver.maximize_window()
         self.driver = driver
 
     def ShutDownGoogleDriver(self):
