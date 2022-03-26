@@ -1,11 +1,10 @@
 import unittest
-from Challenge.Locators.Locators_B import Locators
 from Challenge.Pages.BasePage import BasePage
 from Challenge.Pages.CyberAlpaca_HomePage import CA_HomePage
 from Challenge.Pages.CyberAlpaca_ServicesPage import CA_ServicesPage
 
 
-class CyberAlpacaSurfTest(unittest.TestCase, BasePage, Locators):
+class CyberAlpacaSurfTest(unittest.TestCase, BasePage):
     
     #Initiation of the driver with the desired options before the start of the testing session.
     @classmethod
