@@ -11,6 +11,7 @@ class GoogleHomePage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
+    #Input method.
     def search_for(self, searchtext):
         self.do_send_keys(self.SEARCH_BAR, searchtext)
         self.do_click(self.SEARCH_BUTTON)

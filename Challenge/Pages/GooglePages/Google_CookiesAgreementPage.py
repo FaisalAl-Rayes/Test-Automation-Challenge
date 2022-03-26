@@ -11,6 +11,7 @@ class GoogleAgreementPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
+    #Input method.
     def click_i_agree(self):
         try:
             self.do_click(self.I_AGREE)
