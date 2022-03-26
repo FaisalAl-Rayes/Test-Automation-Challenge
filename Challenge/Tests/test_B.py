@@ -1,22 +1,16 @@
 import unittest
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import NoSuchElementException
 from Challenge.Locators.Locators_B import Locators
+from Challenge.Pages.BasePage import BasePage
+from Challenge.Pages.CyberAlpaca_HomePage import CA_HomePage
+from Challenge.Pages.CyberAlpaca_ServicesPage import CA_ServicesPage
 
 
-class CyberAlpacaSurfTest(unittest.TestCase,Locators):
+class CyberAlpacaSurfTest(unittest.TestCase, BasePage, Locators):
     
     #Initiation of the driver with the desired options before the start of the testing session.
     @classmethod
     def setUpClass(cls):
-        options = Options()
-        options.add_argument("--start-maximized")
-        options.add_argument("--disable-notifications")
-        cls.driver = webdriver.Chrome(options=options)
-        cls.driver.maximize_window()
-        cls.driver.implicitly_wait(10)
+        cls.InitiateGoogleDriver(cls)
 
     def test_Site_Navigation(self):
         driver = self.driver
@@ -24,39 +18,38 @@ class CyberAlpacaSurfTest(unittest.TestCase,Locators):
         
         driver.get('http://www.cyberalpaca.com/')
 
-    #Navigation through the website.
-        driver.find_element(By.XPATH,Locators.SERVICES_TAB).click()
-        driver.find_element(By.XPATH,Locators.AUTOMATED_GUI_TESTING).click()
+    #Navigation through the Home Page.
+        homepage = CA_HomePage(driver)
+        homepage.click_on_ServicesTab()
+
+    #Entering the Services Page.
+        servicespage = CA_ServicesPage(driver)
+        servicespage.click_on_Automated_GUI_testing()
 
     #Making sure that Our Services Exists and that the Squish GUI Testing Logo is displayed in the Automated GUI Testing page.
-        assert "Our Services" in driver.find_element(By.XPATH,Locators.OUR_SERVICES_TEXT).text, "Not Found"
-        assert "www.froglogic.com/squish/" in driver.find_element(By.XPATH,Locators.SQUISH_GUI_LOGO).get_attribute('href')
+        servicespage.check_for_Our_Services
+        servicespage.check_for_Squish_GUI_Testing_Logo
     
     #Navigating to Embedded testing page.
-        driver.find_element(By.XPATH,Locators.EMBEDDED_TESTING).click()
+        servicespage.click_on_Embedded_testing()
 
     #Making sure that the Squish GUI Testing Logo is displayed in Automated GUI Testing page.
-        assert "www.froglogic.com/squish/" in driver.find_element(By.XPATH,Locators.SQUISH_GUI_LOGO).get_attribute('href')
-
+        servicespage.check_for_Squish_GUI_Testing_Logo
+    
     #Navigating through the next pages
-        driver.find_element(By.XPATH,Locators.MOBILE_APPLICATION_TESTING).click()
-        driver.find_element(By.XPATH,Locators.WEB_TESTING).click()
-        driver.find_element(By.XPATH,Locators.API_TESTING).click()
+        servicespage.click_on_Mobile_application_testing
+        servicespage.click_on_Web_testing
+        servicespage.click_on_API_testing
 
     #Making sure that the Squish GUI Testing Logo is not displayed in the API testing page.
-        try:
-            driver.find_element(By.XPATH,Locators.SQUISH_GUI_LOGO)
-        except NoSuchElementException:
-            x = "Squish GUI Testing Logo is not present in the API testing page"
-        assert "not present in the API testing" in x, "Squish GUI Testing Logo Found"
+        servicespage.check_for_missing_Squish_GUI_Testing_Logo
 
     #Navigating through the rest of the pages.
-        driver.find_element(By.XPATH,Locators.LOAD_AND_PERFORMANCE_TESTING).click()
-        driver.find_element(By.XPATH,Locators.TOOL_INTEGRATION_DEVELOPMENT).click()
+        servicespage.click_on_Load_and_Performance_testing
+        servicespage.click_on_Tool_integration_development
 
     #Closing the browser and driver after the testing session is over.
     @classmethod
     def tearDownClass(cls):
-        cls.driver.close()
-        cls.driver.quit()
+        cls.ShutDownGoogleDriver(cls)
         print("Test Completed")

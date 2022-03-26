@@ -1,4 +1,5 @@
 from Challenge.Pages.BasePage import BasePage
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 
 
@@ -11,4 +12,7 @@ class GoogleAgreementPage(BasePage):
         super().__init__(driver)
 
     def click_i_agree(self):
-        self.do_click(self.I_AGREE)
+        try:
+            self.do_click(self.I_AGREE)
+        except NoSuchElementException:
+            pass
