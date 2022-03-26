@@ -1,7 +1,6 @@
 import unittest
 from Challenge.Pages.BasePage import BasePage
 from Challenge.Pages.CyberAlpacaPages import *
-from time import sleep
 
 
 class CyberAlpacaSurfTest(unittest.TestCase, BasePage):
