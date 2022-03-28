@@ -37,7 +37,10 @@ class BasePage():
 
     #Base input methods.    
     def do_click(self, locator):
-        self.wait.until(ec.visibility_of_element_located(locator)).click()
+        try:
+            self.wait.until(ec.visibility_of_element_located(locator)).click()
+        except TypeError:
+            self.driver.find_element_by_xpath(locator).click()
 
     def do_send_keys(self, locator, text):
         self.wait.until(ec.visibility_of_element_located(locator)).send_keys(text)
