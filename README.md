@@ -3,7 +3,7 @@ This challenge contains 2 automated tests (A &amp; B)
 
 Test A
 
-1. Go to google.com
+1. Go to www.google.com
 2. Type “CyberAlpaca” in the search field
 3. Verify that the link to www.cyberalpaca.com is displayed in search results
 
