@@ -1,9 +1,9 @@
 import unittest
-from Challenge.Pages.BasePage import BasePage
+from Challenge.Pages.BasePage import BaseClass
 from Challenge.Pages.GooglePages import *
 
 
-class GoogleSearchTest(unittest.TestCase, BasePage):
+class GoogleSearchTest(unittest.TestCase, BaseClass):
     
     #Initiation of the driver with the desired options before the start of the testing session.
     @classmethod

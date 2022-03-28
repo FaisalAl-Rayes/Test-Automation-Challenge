@@ -1,8 +1,8 @@
-from Challenge.Pages.BasePage import BasePage
+from Challenge.Pages.BasePage import BaseClass
 from Challenge.Locators.Locators_B import Locators
 
 
-class CA_ServicesPage(BasePage, Locators):
+class CA_ServicesPage(BaseClass, Locators):
 
     def __init__(self, driver):
         super().__init__(driver)

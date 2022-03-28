@@ -1,9 +1,9 @@
-from Challenge.Pages.BasePage import BasePage
+from Challenge.Pages.BasePage import BaseClass
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 
 
-class GoogleAgreementPage(BasePage):
+class GoogleAgreementPage(BaseClass):
 
     #locators
     I_AGREE = (By.CSS_SELECTOR,"#L2AGLb")

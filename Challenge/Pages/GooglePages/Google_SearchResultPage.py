@@ -1,7 +1,7 @@
-from Challenge.Pages.BasePage import BasePage
+from Challenge.Pages.BasePage import BaseClass
 
 
-class GoogleResultPage(BasePage):
+class GoogleResultPage(BaseClass):
 
     #locators
     CA_LINK = '//a[@href="http://www.cyberalpaca.com/" and @role="button"]'         #XPATH locator.

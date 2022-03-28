@@ -1,9 +1,9 @@
 import unittest
-from Challenge.Pages.BasePage import BasePage
+from Challenge.Pages.BasePage import BaseClass
 from Challenge.Pages.CyberAlpacaPages import *
 
 
-class CyberAlpacaSurfTest(unittest.TestCase, BasePage):
+class CyberAlpacaSurfTest(unittest.TestCase, BaseClass):
     
     #Initiation of the driver with the desired options before the start of the testing session.
     @classmethod

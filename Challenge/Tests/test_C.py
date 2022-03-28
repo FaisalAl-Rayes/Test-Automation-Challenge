@@ -1,10 +1,10 @@
 import unittest
-from Challenge.Pages.BasePage import BasePage
+from Challenge.Pages.BasePage import BaseClass
 from Challenge.Pages.GooglePages import *
 from Challenge.Pages.CyberAlpacaPages import *
 
 
-class Google2CyberAlpacaTest(unittest.TestCase, BasePage):
+class Google2CyberAlpacaTest(unittest.TestCase, BaseClass):
     
     #Initiation of the driver with the desired options before the start of the testing session.
     @classmethod

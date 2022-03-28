@@ -1,8 +1,8 @@
-from Challenge.Pages.BasePage import BasePage
+from Challenge.Pages.BasePage import BaseClass
 from selenium.webdriver.common.by import By
 
 
-class GoogleHomePage(BasePage):
+class GoogleHomePage(BaseClass):
 
     #locators
     SEARCH_BAR = (By.NAME,"q")
