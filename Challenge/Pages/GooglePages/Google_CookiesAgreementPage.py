@@ -14,6 +14,6 @@ class GoogleAgreementPage(BasePage):
     #Input method.
     def click_i_agree(self):
         try:
-            self.do_click(self.I_AGREE)
+            self._do_click(self.I_AGREE)
         except NoSuchElementException:
             pass

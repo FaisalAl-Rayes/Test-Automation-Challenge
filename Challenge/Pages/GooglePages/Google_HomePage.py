@@ -13,5 +13,5 @@ class GoogleHomePage(BasePage):
 
     #Input method.
     def search_for(self, searchtext):
-        self.do_send_keys(self.SEARCH_BAR, searchtext)
-        self.do_click(self.SEARCH_BUTTON)
+        self._do_send_keys(self.SEARCH_BAR, searchtext)
+        self._do_click(self.SEARCH_BUTTON)

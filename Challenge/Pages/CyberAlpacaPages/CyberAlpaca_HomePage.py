@@ -9,4 +9,4 @@ class CA_HomePage(BasePage, Locators):
 
     #Input methods.
     def click_on_ServicesTab(self):
-        self.do_click(Locators.SERVICES_TAB)
+        self._do_click(Locators.SERVICES_TAB)
