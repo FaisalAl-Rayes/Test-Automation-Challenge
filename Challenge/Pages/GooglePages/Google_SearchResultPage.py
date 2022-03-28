@@ -10,9 +10,8 @@ class GoogleResultPage(BasePage):
         super().__init__(driver)
 
     #Checking method.
-    def Find_CA_Link(self):
-        
-        return self.do_find_element_href(self.CA_LINK)
+    def check_for_CA_Link(self):
+        assert "www.cyberalpaca.com" in self.do_find_element_href(self.CA_LINK) , "Result not found"
     
     #Click on CyberAlpaca link
     def click_on_CA_link(self):

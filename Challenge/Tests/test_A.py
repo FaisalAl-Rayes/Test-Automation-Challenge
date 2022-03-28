@@ -25,8 +25,7 @@ class GoogleSearchTest(unittest.TestCase, BasePage):
 
     #Result page checking.
         resultpage = Google_SearchResultPage.GoogleResultPage(driver)
-        resultpage.Find_CA_Link()
-        assert "www.cyberalpaca.com" in resultpage.Find_CA_Link() , "Result not found"
+        resultpage.check_for_CA_Link()
 
     #Closing the browser and driver after the testing session is over.
     @classmethod

@@ -26,8 +26,7 @@ class Google2CyberAlpacaTest(unittest.TestCase, BasePage):
 
     #Google - Result page checking.
         resultpage = Google_SearchResultPage.GoogleResultPage(driver)
-        resultpage.Find_CA_Link()
-        assert "www.cyberalpaca.com" in resultpage.Find_CA_Link() , "Result not found"
+        resultpage.check_for_CA_Link()
 
     #Google - entering www.cyberalpaca.com.
         resultpage.click_on_CA_link()
