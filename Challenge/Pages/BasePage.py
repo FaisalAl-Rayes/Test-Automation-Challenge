@@ -16,10 +16,9 @@ class BaseClass():
     def __init__(self, driver):
         self.driver = driver
         
-    #-Set base explicit wait.
-    #-If a specific method needs a different timeout then another
-    # explicit wait can be set for it in the method using WebDriverWait
-        self.wait = WebDriverWait(self.driver, 10)
+    #-Set explicit wait.
+        self.wait10 = WebDriverWait(self.driver, 10)
+        self.wait5 = WebDriverWait(self.driver, 5)
 
     #Driver initiation method.
     def InitiateGoogleDriver(self):
@@ -40,20 +39,20 @@ class BaseClass():
     #Base input methods.    
     def _do_click(self, locator):
         try:
-            self.wait.until(ec.element_to_be_clickable(locator)).click()
+            self.wait5.until(ec.element_to_be_clickable(locator)).click()
         except TypeError:
             self.driver.find_element(By.XPATH,locator).click()
 
     def _do_send_keys(self, locator, text):
-        WebDriverWait(self.driver,5).until(ec.visibility_of_element_located(locator)).send_keys(text)
+        self.wait5.until(ec.visibility_of_element_located(locator)).send_keys(text)
 
     #Base locating and extracting methods.
     def _do_find_element(self, locator):
-        self.wait.until(ec.presence_of_element_located((By.XPATH, locator)))
+        self.wait10.until(ec.presence_of_element_located((By.XPATH, locator)))
         return self.driver.find_element(By.XPATH,locator)
 
     def _do_find_element_href(self, locator):
-        self.wait.until(ec.presence_of_element_located((By.XPATH, locator)))
+        self.wait10.until(ec.presence_of_element_located((By.XPATH, locator)))
         return self.driver.find_element(By.XPATH,locator).get_attribute('href')
 
     #Base checking methods
