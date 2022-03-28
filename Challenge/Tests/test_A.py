@@ -13,17 +13,18 @@ class GoogleSearchTest(unittest.TestCase, BaseClass):
     def test_Search_Result_Found(self):
         driver = self.driver
 
+    #Accessing www.google.com.(1)
         driver.get("https://www.google.com/")
     
     #Agreeing on the agreement terms set by Google if the agreements page pops up.
         cookiespage = Google_CookiesAgreementPage.GoogleAgreementPage(driver)
         cookiespage.click_i_agree()
         
-    #Home page search.
+    #Home page search.(2)
         homepage = Google_HomePage.GoogleHomePage(driver)
         homepage.search_for("CyberAlpaca")
 
-    #Result page checking.
+    #Result page checking.(3)
         resultpage = Google_SearchResultPage.GoogleResultPage(driver)
         resultpage.check_for_CA_Link()
 
