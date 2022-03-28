@@ -30,7 +30,7 @@ class Google2CyberAlpacaTest(unittest.TestCase, BasePage):
         assert "www.cyberalpaca.com" in resultpage.Find_CA_Link() , "Result not found"
 
     #Google - entering www.cyberalpaca.com.
-        resultpage.do_click(resultpage.CA_LINK)
+        resultpage.click_on_CA_link()
 
     #CyberAlpaca - Navigation through the Home Page.
         homepage = CyberAlpaca_HomePage.CA_HomePage(driver)

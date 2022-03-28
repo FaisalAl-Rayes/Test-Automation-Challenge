@@ -13,3 +13,7 @@ class GoogleResultPage(BasePage):
     def Find_CA_Link(self):
         
         return self.do_find_element_href(self.CA_LINK)
+    
+    #Click on CyberAlpaca link
+    def click_on_CA_link(self):
+        self.do_click(self.CA_LINK)
