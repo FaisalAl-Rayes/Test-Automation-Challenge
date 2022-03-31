@@ -1,1 +1,4 @@
 CyberAlpaca_TestAutomationChallenge.pdf
+__pychache__
+.pytest_cache
+.vscode
