@@ -1,5 +1,5 @@
 # Test-Automation-Challenge
-This challenge contains 2 automated tests (A &amp; B)
+This challenge contains 2 automated tests (A &amp; B) + test C which combines both tests
 
 Test A
 
