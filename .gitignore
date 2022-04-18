@@ -1,5 +1,9 @@
 CyberAlpaca_TestAutomationChallenge.pdf
 .vscode/
 __pycache__/
+Challenge/Locators/__pycache__/
+Challenge/Pages/__pycache__/
+Challenge/Pages/GooglePages/__pycache__/
+Challenge/Tests/__pycache__/
 POM Design Pattern Presentation.pptx
 venv/

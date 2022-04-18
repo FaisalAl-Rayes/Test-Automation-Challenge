@@ -4,7 +4,7 @@ from Challenge.Pages.BasePage import BaseClass
 class GoogleResultPage(BaseClass):
 
     #locators
-    CA_LINK = '//a[@href="http://www.cyberalpaca.com/" and @role="button"]'         #XPATH locator.
+    CA_LINK = '//div[@class="yuRUbf"]/a[@href="http://www.cyberalpaca.com/"]'         #XPATH locator.
     
     def __init__(self, driver):
         super().__init__(driver)

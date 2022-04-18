@@ -6,7 +6,7 @@ class GoogleHomePage(BaseClass):
 
     #locators
     SEARCH_BAR = (By.NAME,"q")
-    SEARCH_BUTTON = (By.XPATH,"/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[1]")
+    SEARCH_BUTTON = (By.CSS_SELECTOR,"div.FPdoLc.lJ9FBc input.gNO89b")
 
     def __init__(self, driver):
         super().__init__(driver)
