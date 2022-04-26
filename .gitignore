@@ -1,7 +1,7 @@
 CyberAlpaca_TestAutomationChallenge.pdf
 .vscode/
-Locators/__pycache__/
-Pages/__pycache__/
+Challenge/Locators/__pycache__/
+Challenge/Pages/__pycache__/
 Pages/GooglePages/__pycache__/
 Tests/__pycache__/
 __pycache__/
